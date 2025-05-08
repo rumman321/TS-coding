@@ -3,33 +3,34 @@
     class BankAccount{
       public readonly id:number;
         name:string;
-       private _balance:number
+    //    private _balance:number
+        #balance:number
 
-        constructor(id:number,name:string,_balance:number){
+        constructor(id:number,name:string,balance:number){
             this.id = id,
             this.name = name,
-            this._balance = _balance
+            this.#balance = balance
         }
 
-        addDeposit(ammount:number){
-            this._balance += ammount
-        }
+        // addDeposit(ammount:number){
+        //     this._balance += ammount
+        // }
 
         getBalance(){
-           return this._balance
+           return this.#balance
         }
     }
 
-    class StudentAccount extends BankAccount{
-        test(){
-            this.id
-        }
-    }
+    // class StudentAccount extends BankAccount{
+    //     test(){
+    //         this.id
+    //     }
+    // }
 
     const poorAccount = new BankAccount(56,'rumman',28282828)
-    poorAccount._balance += 89
-    // console.log(poorAccount);
-    poorAccount.addDeposit(100)
+    // poorAccount.balance += 2
+    console.log(poorAccount);
+    // poorAccount.addDeposit(100)
     console.log(poorAccount.getBalance());
     
 }
